@@ -1,0 +1,27 @@
+<%= link_to "カートの中身を見る", carts_path %>
+
+
+<% if flash[:notce] %>
+<%= flash[:notice] %>
+<% end %>
+
+<!-- 1行目 -->
+<h3>新着アイテム</h3>
+<div class ="index_line1">
+	<% @products.first(3).each do |product| %>
+		<!-- １つ目の出品 -->
+		<div class=index_box1>
+			<%= link_to product_path(product.id) do %>
+				<%= attachment_image_tag product, :image, :fill, 200, 200, fallback: "no_image.jpg" %>
+				<h5><%= product.artist %></h5>
+				<h5><%= product.album %></h5>
+				<h5><%= product.price %>円</h5>
+			<% end %>
+		</div>
+		<!-- 1つ目の出品終了 -->
+	<% end %>
+</div>
+<!-- 1行目終了 -->
+
+
+<%= link_to "出品", new_product_path %>

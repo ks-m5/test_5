@@ -1,0 +1,95 @@
+/*~~~~~~~~~~~~~~index画面の修正~~~~~~~~~~~~~~~~*/
+
+/*新着一覧の文字*/
+h3 {
+	text-align: center;
+}
+/*1行目の新着アイテム一覧*/
+.index_line1 {
+	text-align: center;
+}
+
+/*1行目の中の1つのボックス*/
+.index_box1 {
+	width: 30%;
+	display: inline-block;
+}
+
+
+/*~~~~~~~~~~~~~~show画面の修正~~~~~~~~~~~~~~~~*/
+
+.show_span{
+	font-weight: bold;
+}
+
+.show_box1 {
+	width: 30%;
+	margin: 1%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.show_box2 {
+	width: 30%;
+	margin: 1%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.show_box3 {
+	width: 30%;
+	margin: 1%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.price_letter {
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.price_letter2 {
+	font-size: 25px;
+}
+
+.show_p {
+	font-weight: bold;
+}
+
+.show_line {
+	margin-top: 10%;
+}
+
+.show_p2 {
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 5%;
+}
+
+.show_border {
+	width: 95%;
+	height: 150px;
+	margin: 0 auto;
+	box-shadow: 0 0 15px 2px grey;
+	border-radius: 8px;
+}
+
+.show_btn {
+	width: 15%;
+	margin: 2% auto;
+	padding: 1%;
+	font-size: 25px;
+	text-align: center;
+	background-color: #668ad8;
+	color: white;
+	box-shadow: 0px 6px 2px 0px grey;
+	border-radius: 8px;
+	display: block;
+}
+
+
+
+
+
+
+

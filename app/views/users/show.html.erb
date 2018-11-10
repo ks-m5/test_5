@@ -1,0 +1,50 @@
+<!-- ユーザーのマイページ -->
+
+
+<!-- 1つ目の縦のbox -->
+<div class="show_box">
+	<% @user.products.each do |product| %>
+		<!-- いくつか並ぶ出品商品の箱 -->
+		<div class ="show_product_box">
+			<%= attachment_image_tag product, :image, :fill, 150, 150, fallback: "no_image.jpg", class:"show_image" %>
+		</div>
+	<% end %>
+</div>
+<!-- 1つ目の縦のboxfin -->
+
+
+<!-- 2つ目の縦のbox -->
+<div class="show_box">
+
+	<!-- チャットの表示画面の箱 -->
+	<div class="show_chat_box1">
+		<% @chats.each do |chat| %>
+			<div>
+				<%= chat.user.name %>:  <%= chat.content %>
+			</div>
+		<% end %>
+	</div>
+	<!-- チャットの表示画面の箱fin -->
+
+	<!-- チャットの内容入力の箱 -->
+	<div class="show_chat_box2">
+		<%= form_for(@chat, url: user_path(@user.id), html: {method: 'patch'}) do |f| %>
+		<%= f.text_area :content, class:"show_chat_box2_form" %>
+	</div>
+	<!-- チャットの内容入力の箱fin -->
+
+	<!-- チャットの送信ボタンの箱 -->
+	<div class="show_chat_box3">
+		<%= f.submit '送信', class:"show_chat_box2_btn" %>
+	</div>
+	<% end %>
+	<!-- チャットの送信ボタンの箱fin -->
+
+</div>
+<!-- 2つ目の縦のboxfin -->
+
+
+<!-- 3つ目の縦のbox -->
+<div class="show_box">
+</div>
+<!-- 3つ目の縦のboxfin

@@ -1,0 +1,62 @@
+<div>
+	<span class="show_span">アーティスト名　：</span>
+	<%= @product.artist %>
+</div>
+
+<div>
+	<span class="show_span">　　　　 CD名　：</span>
+	<%= @product.album %>
+</div>
+
+<!-- line1 -->
+<div class="show_line1">
+
+	<!-- box1 -->
+	<div class="show_box1">
+		<div><%= attachment_image_tag @product, :image, fallback: "no_image.jpg" %></div>
+		<p><span class="price_letter">値段</span>　　　<span class="price_letter2"><%= @product.price %>円</span>
+		</p>
+	</div>
+	<!-- box1fin -->
+
+	<!-- box2 -->
+	<div class="show_box2">
+		<div>
+		<p class="show_p">出品者名</p>
+			<%= link_to @product.user.name, user_path(@product.user.id) %>
+		<p class="show_p">ジャンル</p>
+		<%= @product.genre %>
+		<p class="show_p">レーベル名</p>
+		<%= @product.label %>
+		<p class="show_p">状態</p>
+		<%= @product.state %>
+		</div>
+	</div>
+	<!-- box2fin -->
+
+	<!-- box3 -->
+	<div class="show_box3">
+		<p class="show_p">曲リスト</p>
+		<%= @product.song %>
+	</div>
+	<!-- box3fin -->
+
+</div>
+<!-- line1fin -->
+
+<!-- line2 -->
+<div class="show_line2">
+	<p class="show_p2">商品の紹介</p>
+
+	<div class="show_border">
+		<%= @product.introduction %>
+	</div>
+
+</div>
+<!-- line2fin -->
+
+<!-- line3 -->
+<div class="show_line3">
+	<%= link_to "カートに入れる", cart_path(@product.id), class:"show_btn", method: :patch %>
+</div>
+<!-- line3fin -->

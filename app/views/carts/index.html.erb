@@ -1,0 +1,48 @@
+<% @cart.cart_items.each do |cart_item| %>
+
+	<!-- 横の列 -->
+	<div class="cart_index_row">
+
+		<!-- 一番左の箱 -->
+		<div class="cart_index_row_box1">
+		<%= attachment_image_tag cart_item.product, :image, :fill, 250, 250, fallback: "no_image.jpg" %>
+		</div>
+		<!-- 一番左の箱fin -->
+
+		<!-- 真ん中の箱 -->
+		<div class="cart_index_row_box2">
+			<%= link_to product_path(cart_item.product.id) do %>
+				<h4>アーティスト名</h4>
+				<%= cart_item.product.artist %>
+				<h4>CD名</h4>
+				<%= cart_item.product.album %>
+			<% end %>
+
+			<h4>出品者</h4>
+			<%= cart_item.product.user.name %>
+		</div>
+		<!-- 真ん中の箱fin -->
+
+		<!-- 右の箱 -->
+		<div class="cart_index_row_box3">
+
+			<!--　右の箱の左側（値段） -->
+			<div class="cart_index_row_box3_left">
+				<p>￥ <%= cart_item.product.price %></p>
+			</div>
+			<!--　右の箱の左側（値段）fin -->
+
+			<!--　右の箱の右側（個数と削除） -->
+			<div class="cart_index_row_box3_right">
+				<%= link_to "削除", cart_item()
+			</div>
+			<!-- 　右の箱の右側（個数と削除） -->
+
+		</div>
+		<!-- 右の箱fin -->
+
+	</div>
+	<!-- 横の列fin -->
+
+<% end %>
+

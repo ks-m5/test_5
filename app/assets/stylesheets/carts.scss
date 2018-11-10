@@ -1,0 +1,64 @@
+/*カート画面のインデックス*/
+
+/*横の列*/
+.cart_index_row{
+	height: 300px;
+/*	background-color: grey;*/
+	width: 95%;
+	margin: 4% auto;
+}
+
+/*左の箱*/
+.cart_index_row_box1 {
+	height: 290px;
+/*	background-color: red;*/
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+
+/*真ん中の箱*/
+.cart_index_row_box2{
+	height: 290px;
+/*	background-color: blue;*/
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*真ん中の箱の一番上の行の文字*/
+.cart_index_row_box2 h4:first-child {
+	margin: 0 0 1% 0;
+}
+
+/*真ん中の箱の2番目以降の行の文字*/
+.cart_index_row_box2 h4 {
+	margin: 8% 0 0 0;
+}
+
+
+
+
+/*右の箱*/
+.cart_index_row_box3{
+	height: 290px;
+/*	background-color: orange;*/
+	width: 33%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*値段の文字*/
+.cart_index_row_box3_left p{
+	font-size: 18px;
+}
+
+
+
+
+
+
+
+
