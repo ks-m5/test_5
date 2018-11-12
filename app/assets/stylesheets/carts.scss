@@ -1,4 +1,4 @@
-/*カート画面のインデックス*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~カート画面のインデックス~~~~~~~~~~~~~~~~~~~*/
 
 /*横の列*/
 .cart_index_row{
@@ -6,6 +6,7 @@
 /*	background-color: grey;*/
 	width: 95%;
 	margin: 4% auto;
+	margin-bottom: 1%;
 }
 
 /*左の箱*/
@@ -54,6 +55,106 @@
 .cart_index_row_box3_left p{
 	font-size: 18px;
 }
+
+
+
+
+/*金額や決済画面の箱*/
+.cart_price_buy_box {
+	width: 25%;
+	float: right;
+}
+
+/*決済画面に進むボタン*/
+.cart_price_buy_box_btn {
+	padding: 2% 25%;
+	background-color: #f0c14b;
+	color: #111;
+	background: linear-gradient(to bottom, #f7dea1, #f0c24d);
+	border: 1px solid #9c7e31;
+	border-radius: 3px;
+	cursor: crosshair;
+	font-size: 12px;
+	text-decoration: none;
+}
+
+/*決済画面に進むボタンにカーソルを乗せた場合*/
+.cart_price_buy_box_btn:hover {
+	background: linear-gradient(to bottom, #f5d689, #eeba35);
+}
+
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~購入画面（カート画面のshow）~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/*1列目の行*/
+.cart_show_line1 {
+	box-shadow: 0 0 5px 2px grey;
+}
+
+
+/*左から1番目の縦の列(サムネイル画像)*/
+.cart_show_row1 {
+	height: 350px;
+	width: 24%;
+	margin: 2% 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*左から2番目の縦の列（出品者名、アーティスト名、CD名）*/
+.cart_show_row2 {
+	height: 350px;
+	width: 24%;
+	margin: 2% 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*2番目の縦の列の出品者名*/
+.cart_show_row2 h4:first-child {
+	margin: 0 ;
+}
+
+.cart_show_row2 h4 {
+	margin: 0 ;
+	margin-top: 5%;
+}
+
+/*左から3番目の縦の列（支払方法）*/
+.cart_show_row3 {
+	height: 350px;
+	background-color: orange;
+	width: 24%;
+	margin: 2% 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.cart_show_row3 h4{
+	margin:0 ;
+	display: inline-block;
+}
+
+/*購入画面の支払方法選択のセレクトボタン*/
+.cart_show_row3_payment {
+	display: inline-block;
+}
+
+/*左から4番目の縦の列（住所等）*/
+.cart_show_row4 {
+	height: 350px;
+	background-color: red;
+	width: 24%;
+	margin: 2% 0;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+
 
 
 

@@ -18,8 +18,12 @@ class UsersController < ApplicationController
 		@chat = Chat.new(chat_params)
 		@chat.user_id = current_user.id
 		@chat.room_id = @room.id
-		@chat.save
-		redirect_to user_path
+		if @chat.save
+			redirect_to user_path
+		else
+			@chat.errors.full_messages
+			render "users/show"
+		end
 	end
 
 

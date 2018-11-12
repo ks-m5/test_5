@@ -1,5 +1,11 @@
 <%= link_to "カートの中身を見る", carts_path %>
 
+<%= form_tag("/search", method: :get) do %>
+
+	<%= text_field_tag(:search) %>
+	<%= submit_tag '検索' %>
+
+<% end %>
 
 <% if flash[:notce] %>
 <%= flash[:notice] %>

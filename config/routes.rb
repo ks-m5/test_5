@@ -6,10 +6,16 @@ Rails.application.routes.draw do
 
   resources :products
 
-  resources :carts, only: [:index, :update]
+  resources :carts, only: [:index, :show]
 
   resources :cart_items, only: [:update, :destroy]
 
   resources :users, only: [:show, :update]
+
+  resources :deliveries, only: [:create]
+
+  resources :buy_products, only: [:create]
+
+  get "/search" => "searches#search"
 
 end

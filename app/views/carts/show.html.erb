@@ -1,0 +1,48 @@
+<% @cart.cart_items.each do |cart_item| %>
+
+	<!-- 1つ目の横の行（商品情報） -->
+	<div class="cart_show_line1">
+
+		<!-- 左から1番目の縦の列(サムネイル画像) -->
+		<div class="cart_show_row1">
+			<%= attachment_image_tag cart_item.product, :image, :fill, 300, 300, fallback: "no_image.jpg" %>
+		</div>
+		<!-- 左から1番目の縦の列(サムネイル画像)fin -->
+
+		<!-- 左から2番目の縦の列（出品者名、アーティスト名、CD名） -->
+		<div class="cart_show_row2">
+			<h4>出品者名</h4>
+			<%= cart_item.cart.user.name %>
+			<h4>アーティスト名</h4>
+			<%= cart_item.product.artist %>
+			<h4>CD名</h4>
+			<%= cart_item.product.album %>
+		</div>
+		<!-- 左から2番目の縦の列（出品者名、アーティスト名、CD名）fin -->
+
+		<!-- 左から3番目の縦の列（支払方法） -->
+		<div class="cart_show_row3">
+			<%= form_for(@delivery) do |f| %>
+			<h4>支払方法　　</h4>
+			<%= f.select :payment, [["クレジット", "クレジッット"], ["代金引換", "代金引換"], ["コンビニ", "コンビニ"]], :prompt => "選択してください", class:"cart_show_row3_form" %>
+		</div>
+		<!-- 左から3番目の縦の列（支払方法）fin -->
+
+		<!-- 左から4番目の縦の列（住所等） -->
+		<div class="cart_show_row4">
+			<h4>送付先</h4>
+		</div>
+		<!-- 左から4番目の縦の列（住所等）fin -->
+
+	</div>
+	<!-- 1つ目の横の行（商品情報）fin -->
+
+			<% end %>
+<% end %>
+
+
+<!-- 1つ目の行（合計と購入するボタン） -->
+<div class="cart_show_line2">
+	<%= link_to "購入する", buy_products_path, method: :post %>
+</div>
+<!-- 1つ目の行（合計と購入するボタン） -->

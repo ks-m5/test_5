@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
 
 	before_action :configure_permitted_parameters, if: :devise_controller?
-	# helper_method :current_cart
+	before_action :make_cart_buy
+	# ユーザーが登録、ログインしたときにmake_cartメソッドを呼び出したいが、deviseで設定しているためroutesをいじれない。どうするべきか？
 
 	protected
 
@@ -10,15 +11,24 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.permit(:sign_in, keys: [:name, :name_kana, :potal, :state, :street, :adress, :tel, :image_id, :profile])
 	end
 
-	# def current_cart
-	# 	if session[:cart_id]
-	# 		@cart = Cart.find(session[:cart_id])
-	# 	else
-	# 		@cart = Cart.new
-	# 		@cart.user_id = current_user.id
-	# 		@cart.save
-	# 		session[:cart_id] = @cart.id
-	# 	end
-	# end
+
+	def make_cart_buy
+		if Cart.where(user_id: current_user.id).exists?
+			@cart = Cart.find_by(user_id: current_user.id)
+		else
+			@cart = Cart.new
+			@cart.user_id = current_user.id
+			@cart.save
+		end
+
+		if Buy.where(user_id: current_user.id).exists?
+			@buy = Buy.find_by(user_id: current_user.id)
+		else
+			@buy = Buy.new
+			@buy.user_id = current_user.id
+			@buy.save
+		end
+	end
+
 
 end

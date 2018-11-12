@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
 	def index
 		@products = Product.all.order("created_at DESC")
+		@product = Product.new
 	end
 
 	def new
@@ -26,13 +27,10 @@ class ProductsController < ApplicationController
 		# いらないっぽい
 	end
 
-
-
 	private
 
 	def product_params
 		params.require(:product).permit(:artist, :album, :image, :label, :introduction, :price, :count, :genre, :state, :song)
 	end
-
 
 end

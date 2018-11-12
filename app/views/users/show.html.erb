@@ -1,5 +1,7 @@
 <!-- ユーザーのマイページ -->
-
+<% @chat.errors.full_messages.each do |full_message| %>
+<%= full_message %>
+<% end %>
 
 <!-- 1つ目の縦のbox -->
 <div class="show_box">
